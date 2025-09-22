@@ -43,13 +43,19 @@
     
 
 // }
-let todoList=()=>{
-    let arr=[];
-    let data=document.getElementById('todo').value;
-    let d1=document.getElementById('result');
-    arr.push(data);
-    for(let i=onabort;i<arr.length;i++)
-    {
-        d1.innerHTML=arr;
+let todoList = () => {
+    let data = document.getElementById('todo').value;
+    let d1 = document.getElementById('result');
+    if (data.trim() === "") {
+        d1.innerHTML = "Please enter a todo item.";
+        d1.style.color = "red";
+        return;
     }
+    // Use localStorage for persistence
+    let arr = JSON.parse(localStorage.getItem('todos') || '[]');
+    arr.push(data);
+    localStorage.setItem('todos', JSON.stringify(arr));
+    d1.innerHTML = arr.map((item, idx) => `<li>${item}</li>`).join('');
+    d1.style.color = "#363D73";
+    document.getElementById('todo').value = "";
 }

@@ -1,0 +1,47 @@
+/* Simple style for todo app */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f9d6e5;
+    color: #363D73;
+    margin: 0;
+    padding: 2rem;
+}
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(231, 167, 199, 0.10);
+    max-width: 400px;
+    margin: 2rem auto;
+}
+input[type="text"] {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #e7a7c7;
+    width: 70%;
+    margin-right: 0.5rem;
+}
+button {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: #e7a7c7;
+    color: #363D73;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #f7c1e3;
+}
+ul#result {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+ul#result li {
+    margin-bottom: 0.5rem;
+    background: #f7c1e3;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: #363D73;
+}

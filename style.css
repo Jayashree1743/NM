@@ -1,11 +1,73 @@
+:root {
+    --main-gradient: linear-gradient(90deg, #f7c1e3, #f9d6e5, #f7c1e3);
+    --accent-gradient: linear-gradient(45deg, #e7a7c7, #f7c1e3);
+    --primary: #f7c1e3;
+    --secondary: #e7a7c7;
+    --text-dark: #363D73;
+    --text-light: #fff;
+    --btn-main: #e7a7c7;
+    --btn-hover: #fff;
+    --btn-border: #e7a7c7;
+    --icon-bg: #e7a7c7;
+    --footer-bg: #e7a7c7;
+    --footer-icon: #f7c1e3;
+    --shadow: 0 2px 8px rgba(231, 167, 199, 0.10);
+}
+@media screen and (max-width: 768px) {
+    .navbar, .footer-menu, .menu, .about, .portfolio, .services, .contact {
+        padding: 0 1rem !important;
+    }
+    .menu .menu-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about .about-image img {
+        width: 90vw;
+        height: auto;
+        padding: 1rem;
+    }
+    .my-row {
+        flex-direction: column;
+    }
+    .my-row .my-col {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .contact-content {
+        flex-direction: column;
+    }
+    .contact-form-container, .contact-details {
+        width: 100%;
+    }
+}
 /* Styles defined for the desktop or the bigger screen devices*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --main-gradient: linear-gradient(90deg, #f7c1e3, #f9d6e5, #f7c1e3);
+    --accent-gradient: linear-gradient(45deg, #e7a7c7, #f7c1e3);
+    --primary: #f7c1e3;
+    --secondary: #e7a7c7;
+    --text-dark: #363D73;
+    --text-light: #fff;
+    --btn-main: #e7a7c7;
+    --btn-hover: #fff;
+    --btn-border: #e7a7c7;
+    --icon-bg: #e7a7c7;
+    --footer-bg: #e7a7c7;
+    --footer-icon: #f7c1e3;
+}
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    background: var(--main-gradient);
 }
 
 /* Header Navbar Styles */
@@ -16,8 +78,9 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-image: linear-gradient(90deg, #74D7BB, #53C8B6, #35A99C);
+    background-image: var(--main-gradient);
     background-color: transparent;
+    box-shadow: 0 2px 8px rgba(247, 193, 227, 0.15);
 }
 
 .logo {
@@ -25,7 +88,9 @@ body {
 }
 
 .logo .logo-heading {
-    color: #fff;
+    color: var(--text-dark);
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
 .menu {
@@ -34,7 +99,7 @@ body {
 
 .hamburger {
     display: none;
-    color: #fff;
+    color: var(--text-dark);
     font-size: 25px;
 }
 
@@ -59,15 +124,15 @@ body {
 
 /* Main Hero Section Styles */
 .hero {
-    background-image: url('./Images/heroImg3.avif');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-image: var(--main-gradient);
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: start;
     margin: 4.8rem 0;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 4px 24px rgba(231, 167, 199, 0.15);
 }
 
 .hero .intro {
@@ -86,21 +151,26 @@ body {
 .about {
     display: flex;
     align-items: center;
-    background-image: linear-gradient(45deg, #363D73, #2794B3);
+    background-image: var(--accent-gradient);
     justify-content: space-between;
     width: 100%;
+    border-radius: 40px;
+    box-shadow: 0 4px 24px rgba(231, 167, 199, 0.10);
 }
 
 .about .about-text {
     width: 450px;
-    color: #fff;
+    color: var(--text-dark);
     padding: 5rem 1rem 5rem 5rem;
+    font-size: 1.1rem;
 }
 
 .about .about-image img {
     height: 400px;
     width: 450px;
     padding: 5rem 5rem 5rem 1rem;
+    border-radius: 30px;
+    box-shadow: 0 2px 16px rgba(231, 167, 199, 0.15);
 }
 
 /* Portfolio section styles */
@@ -155,23 +225,25 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    background-image: linear-gradient(#74D7BB, #53C8B6, #35A99C);
+    background-image: var(--main-gradient);
     padding: 1rem;
+    box-shadow: 0 2px 12px rgba(231, 167, 199, 0.10);
 }
 
 .icon {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    background-color: #363D73;
+    background-color: var(--icon-bg);
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 2px 8px rgba(231, 167, 199, 0.10);
 }
 
 .icon svg {
     font-size: 30px;
-    color: #fff;
+    color: var(--text-dark);
 }
 
 /* Contact section styles */
@@ -210,9 +282,11 @@ body {
 
 /* Footer Styles */
 .footer {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--footer-bg);
+    color: var(--text-dark);
     padding: 2rem;
+    border-radius: 40px 40px 0 0;
+    box-shadow: 0 -2px 16px rgba(231, 167, 199, 0.10);
 }
 
 .footer-list-items {
@@ -223,12 +297,13 @@ body {
     width: 50px;
     margin: 1rem 1rem 0 1rem;
     border-radius: 50%;
-    background-color: #53C8B6;
+    background-color: var(--footer-icon);
+    box-shadow: 0 2px 8px rgba(231, 167, 199, 0.10);
 }
 
 .footer-links {
     font-size: 24px;
-    color: #fff;
+    color: var(--text-dark);
     text-decoration: none;
 }
 
@@ -238,31 +313,30 @@ body {
     justify-content: center;
 }
 
-.footer-menu {
-    padding: 0 5rem;
+.common-btn {
+    background-color: var(--btn-main);
+    color: var(--text-dark);
+    border: 2px solid var(--btn-border);
+    transition: all 0.25s;
 }
-
-.footer-menu .footer-menu-list {
-    display: flex;
-    list-style: none;
+.common-btn:hover {
+    background-color: var(--btn-hover);
+    color: var(--btn-main);
+    border: 2px solid var(--btn-border);
+    outline: none;
 }
+.ghost-btn {
+    background-color: var(--btn-hover);
+    color: var(--btn-main);
 
-
-
-
-
-
-/* utility classes */
-.greet-heading {
-    font-size: 1.3rem;
-    font-weight: lighter;
-    margin: 0;
-    letter-spacing: 1px;
+    border: 2px solid var(--btn-border);
+    outline: none;
 }
-
-.my-heading {
-    font-size: 2.5rem;
-    margin: 0;
+.ghost-btn:hover {
+    background-color: var(--btn-main);
+    color: var(--btn-hover);
+    transition: all 0.25s;
+    border: 2px solid var(--btn-border);
 }
 
 .sub-heading {
@@ -338,5 +412,5 @@ body {
 }
 
 .blue-text {
-    color: #363D73;
+    color: var(--text-dark);
 }

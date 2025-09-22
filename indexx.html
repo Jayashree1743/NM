@@ -14,34 +14,23 @@
 
 <body>
     <!-- Navbar header section -->
-    <header class="header">
-        <nav class="navbar">
+    <header class="header" aria-label="Main Navigation">
+        <nav class="navbar" role="navigation" aria-label="Primary">
             <div class="logo">
-                <div class="logo">
-                    <img src="./Images/logo_image.jpg" alt="Jayasree S Logo" class="logo-image">
+                <img src="./Images/logo_image.jpg" alt="Jayasree S Logo" class="logo-image" width="48" height="48">
                 <h2 class="logo-heading">Jayasree S</h2>
             </div>
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars hamburger-icon"></i>
-                <i class="fas fa-times cross-icon"></i>
-            </div>
-            <div class="menu">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="main-menu" aria-expanded="false">
+                <i class="fas fa-bars hamburger-icon" aria-hidden="true"></i>
+                <i class="fas fa-times cross-icon" aria-hidden="true"></i>
+            </button>
+            <div class="menu" id="main-menu">
                 <ul class="menu-list">
-                    <li class="menu-list-items">
-                        <a class="links" href="#home">Home</a>
-                    </li>
-                    <li class="menu-list-items">
-                        <a class="links" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="menu-list-items">
-                        <a class="links" href="#about">About</a>
-                    </li>
-                    <li class="menu-list-items">
-                        <a class="links" href="#services">Services</a>
-                    </li>
-                    <li class="menu-list-items">
-                        <a class="links" href="#contact">Contact Me</a>
-                    </li>
+                    <li class="menu-list-items"><a class="links" href="#home">Home</a></li>
+                    <li class="menu-list-items"><a class="links" href="#portfolio">Portfolio</a></li>
+                    <li class="menu-list-items"><a class="links" href="#about">About</a></li>
+                    <li class="menu-list-items"><a class="links" href="#services">Services</a></li>
+                    <li class="menu-list-items"><a class="links" href="#contact">Contact Me</a></li>
                 </ul>
             </div>
         </nav>
@@ -53,13 +42,11 @@
             <div class="headings">
                 <h3 class="greet-heading">Hello, I'm</h3>
                 <h1 class="my-heading">Jayasree S</h1>
-                <h4 class="sub-heading">
-                    Data Science Enthusiast | AI & ML Developer
-                </h4>
+                <h4 class="sub-heading">Data Science Enthusiast | AI &amp; ML Developer</h4>
             </div>
             <div class="intro-buttons">
-                <button class="btn common-btn">Hire Me</button>
-                <button class="btn ghost-btn">Get Resume</button>
+                <button class="btn common-btn" aria-label="Hire Me">Hire Me</button>
+                <a href="#" class="btn ghost-btn" aria-label="Get Resume" download>Get Resume</a>
             </div>
         </div>
     </section>
@@ -74,7 +61,7 @@
                 <div class="my-col">
                     <div class="my-card port-card">
                         <div class="image">
-                            <img src="C:\Users\Admin\Pictures\Screenshots\Screenshot (241).png" alt="UPI Dashboard">
+                            <img src="images/Screenshot (241).png" alt="UPI Dashboard" loading="lazy">
                         </div>
                         <h3 class="greet-heading blue-text">UPI Dashboard Sales Analysis</h3>
                         <p class="small-para blue-text">
@@ -85,7 +72,7 @@
                 <div class="my-col">
                     <div class="my-card port-card">
                         <div class="image">
-                            <img src="C:\Users\Admin\Pictures\Screenshots\Screenshot (242).png" alt="Pizza Sales Analysis">
+                            <img src="images/Screenshot (242).png" alt="Pizza Sales Analysis" loading="lazy">
                         </div>
                         <h3 class="greet-heading blue-text">Pizza Sales Analysis</h3>
                         <p class="small-para blue-text">
@@ -143,7 +130,7 @@
             </ul>
         </div>
         <div class="about-image">
-            <img src="D:\SREE\IMPO DOC\new.jpeg" alt="Profile Picture">
+            <img src="images/new.jpeg" alt="Profile Picture" loading="lazy">
         </div>
     </section>
 
@@ -203,11 +190,11 @@
             <div class="contact-form-container">
                 <h1 class="greet-heading">Get In Touch</h1>
                 <form class="contact-form">
-                    <input class="form-controls" type="text" placeholder="Your Name">
-                    <input class="form-controls" type="text" placeholder="Your Email">
-                    <input class="form-controls" type="text" placeholder="Your Phone">
-                    <textarea class="form-controls" placeholder="Write your message" name="message" id="" cols="30" rows="10"></textarea>
-                    <input class="form-btn btn common-btn" type="submit" value="Send Message">
+                    <input class="form-controls" type="text" placeholder="Your Name" aria-label="Your Name" required>
+                    <input class="form-controls" type="email" placeholder="Your Email" aria-label="Your Email" required>
+                    <input class="form-controls" type="tel" placeholder="Your Phone" aria-label="Your Phone">
+                    <textarea class="form-controls" placeholder="Write your message" name="message" aria-label="Write your message" cols="30" rows="10" required></textarea>
+                    <input class="form-btn btn common-btn" type="submit" value="Send Message" aria-label="Send Message">
                 </form>
             </div>
             <div class="contact-details">
