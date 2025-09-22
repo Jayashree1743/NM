@@ -1,3 +1,141 @@
-!
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot CSS Showcase</title>
+    <link rel="stylesheet" href="../responsive.css">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--robot-gradient-dark);
+            color: var(--robot-light);
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .showcase-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .robot-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+        
+        .demo-section {
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: var(--robot-border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid var(--robot-primary);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .demo-card {
+            background: var(--robot-gradient-primary);
+            color: var(--robot-dark);
+            padding: 1.5rem;
+            border-radius: var(--robot-border-radius);
+            text-align: center;
+            transition: var(--robot-transition);
+        }
+        
+        .demo-card:hover {
+            transform: var(--robot-hover-scale);
+            box-shadow: var(--robot-glow-effect);
+        }
+        
+        .effect-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .effect-btn {
+            background: var(--robot-gradient-secondary);
+            border: 2px solid var(--robot-secondary);
+            border-radius: var(--robot-border-radius);
+            color: var(--robot-light);
+            padding: 1rem 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--robot-transition);
+            font-family: 'Courier New', monospace;
+            margin: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="showcase-container">
+        <h1 class="robot-title robot-text-glow">Robot CSS Showcase</h1>
+        
+        <div class="demo-section robot-scan">
+            <h2 class="robot-text-glow">🤖 Interactive Elements</h2>
+            <div class="demo-grid">
+                <div class="demo-card robot-interactive">
+                    <h3>Hover Effect</h3>
+                    <p>Hover over this card to see the robot scaling effect</p>
+                </div>
+                <div class="demo-card robot-interactive">
+                    <h3>Glow Animation</h3>
+                    <p>Watch the subtle glow animation on hover</p>
+                </div>
+                <div class="demo-card robot-interactive">
+                    <h3>Transform Effect</h3>
+                    <p>Experience smooth CSS transforms</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="robot-text-glow">🎨 Robot Effects</h2>
+            <div class="effect-showcase">
+                <button class="effect-btn robot-pulse">Pulse Effect</button>
+                <button class="effect-btn robot-glitch">Glitch Effect</button>
+                <button class="effect-btn robot-scan">Scan Effect</button>
+                <button class="effect-btn robot-border-glow">Glow Border</button>
+            </div>
+        </div>
+        
+        <div class="demo-section robot-bg-primary">
+            <h2 style="color: var(--robot-dark);">🎯 Background Gradients</h2>
+            <div class="demo-grid">
+                <div style="background: var(--robot-bg-secondary); padding: 2rem; border-radius: var(--robot-border-radius); text-align: center;">
+                    <h3>Secondary Gradient</h3>
+                </div>
+                <div style="background: var(--robot-bg-dark); padding: 2rem; border-radius: var(--robot-border-radius); text-align: center;">
+                    <h3>Dark Gradient</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="robot-text-glow">📱 Responsive Design</h2>
+            <p>This showcase adapts to different screen sizes using the robot responsive system:</p>
+            <ul>
+                <li>🖥️ Desktop: Full grid layout with hover effects</li>
+                <li>📱 Tablet: Adjusted spacing and optimized interactions</li>
+                <li>📱 Mobile: Stacked layout with touch-friendly elements</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>
