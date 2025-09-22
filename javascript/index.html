@@ -3,39 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Robot Todo App</title>
+    <link rel="stylesheet" href="../responsive.css">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--robot-gradient-dark);
+            color: var(--robot-light);
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .robot-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .todo-form {
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: var(--robot-border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid var(--robot-primary);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--robot-glow);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--robot-dark);
+            border: 2px solid var(--robot-primary);
+            border-radius: var(--robot-border-radius);
+            color: var(--robot-light);
+            font-family: 'Courier New', monospace;
+            transition: var(--robot-transition);
+        }
+        
+        .form-group input:focus {
+            border-color: var(--robot-glow);
+            box-shadow: var(--robot-glow-effect);
+            outline: none;
+        }
+        
+        .robot-btn {
+            background: var(--robot-gradient-secondary);
+            border: 2px solid var(--robot-secondary);
+            border-radius: var(--robot-border-radius);
+            color: var(--robot-light);
+            padding: 1rem 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--robot-transition);
+            font-family: 'Courier New', monospace;
+        }
+        
+        .robot-btn:hover {
+            box-shadow: 0 0 20px var(--robot-secondary);
+            transform: var(--robot-hover-scale);
+        }
+        
+        .todo-list {
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: var(--robot-border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid var(--robot-secondary);
+            min-height: 200px;
+        }
+        
+        .feedback {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .success {
+            color: var(--robot-accent);
+        }
+        
+        .error {
+            color: var(--robot-secondary);
+        }
+    </style>
 </head>
 <body>
-    <!-- <form>
-        <div>
-            <label>Username</label>
-                <input type="text" id="uname" name="uname" value="" placeholder="Enter your username" onkeyup="checkuser()"/>
-                <p id="pid1" >*****</p>
-        </div>
-        <div>
-            <label>password</label>
-                <input type="password" id="pass" name="pass" value="" placeholder="Enter your password" onkeyup="checkpass()"/>
-                <p id="pid2">*****</p>
-
-        </div>
-        <div>
-            <input type="button" value="login"/>
-        </div>
-    </form>
-      -->
-    <form>
-        <div>
-                    <input type="enter a to do list" id="todo" name="todo" value="" placeholder="Enter your username" onkeyup="checkuser()"/>
-                    <p id="pid1" >*****</p>
+    <div class="container">
+        <h1 class="robot-title robot-text-glow">Robot Todo System</h1>
+        
+        <!-- Login Form (Currently Commented) -->
+        <div class="todo-form robot-scan">
+            <h3 class="robot-text-glow">User Authentication</h3>
+            <div class="form-group">
+                <label for="uname">Username</label>
+                <input type="text" id="uname" name="uname" placeholder="Enter your username" onkeyup="checkuser()"/>
+                <p id="pid1" class="feedback">*****</p>
             </div>
-            <div>
-                <label>password</lab
-
+            <div class="form-group">
+                <label for="pass">Password</label>
+                <input type="password" id="pass" name="pass" placeholder="Enter your password" onkeyup="checkpass()"/>
+                <p id="pid2" class="feedback">*****</p>
+            </div>
+            <button type="button" class="robot-btn" onclick="printdata()">Login</button>
         </div>
-    </form>
-    
-    
+        
+        <!-- Todo Form -->
+        <div class="todo-form robot-pulse">
+            <h3 class="robot-text-glow">Add Todo Item</h3>
+            <div class="form-group">
+                <label for="todo">Todo Item</label>
+                <input type="text" id="todo" name="todo" placeholder="Enter your todo item" />
+            </div>
+            <button type="button" class="robot-btn" onclick="todoList()">Add Todo</button>
+        </div>
+        
+        <!-- Todo Management Controls -->
+        <div class="todo-form" style="background: rgba(57, 255, 20, 0.1); border-color: var(--robot-accent);">
+            <h3 class="robot-text-glow">Mission Control</h3>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <button type="button" class="robot-btn" onclick="completeAll()" style="background: var(--robot-gradient-primary); border-color: var(--robot-primary);">
+                    ✅ Complete All
+                </button>
+                <button type="button" class="robot-btn" onclick="clearCompleted()" style="background: linear-gradient(135deg, #ff8800, #ff6600); border-color: #ff8800;">
+                    🧹 Clear Completed
+                </button>
+            </div>
+        </div>
 
+        <!-- Todo Results -->
+        <div class="todo-list">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 class="robot-text-glow">Mission Database</h3>
+                <div class="system-time" style="
+                    color: var(--robot-glow); 
+                    font-size: 0.9rem; 
+                    font-family: 'Courier New', monospace;
+                    background: rgba(0, 255, 255, 0.1);
+                    padding: 0.5rem 1rem;
+                    border-radius: var(--robot-border-radius);
+                    border: 1px solid var(--robot-glow);
+                "></div>
+            </div>
+            <div id="result">🤖 Initializing mission database...</div>
+        </div>
+    </div>
+    
     <script src="./app.js"></script>
 </body>
 </html>

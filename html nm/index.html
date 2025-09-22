@@ -3,38 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educational Qualifications</title>
+    <title>Robot Portfolio - Educational Qualifications</title>
+    <link rel="stylesheet" href="../responsive.css">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--robot-gradient-dark);
+            color: var(--robot-light);
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .robot-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .qualifications-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: var(--robot-border-radius);
+            overflow: hidden;
+            box-shadow: var(--robot-shadow);
+            margin: 2rem 0;
+        }
+        
+        .qualifications-table th {
+            background: var(--robot-gradient-primary);
+            color: var(--robot-dark);
+            padding: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .qualifications-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            transition: var(--robot-transition);
+        }
+        
+        .qualifications-table tr:hover td {
+            background: rgba(0, 212, 255, 0.1);
+            box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+        
+        .qualifications-table tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body>
-
-    <BC School</td>
-            <td>2019</td>
-            <td>85%</td>
-        </tr>
-        <tr>
-            <td>Secondary (10th)</td>
-            <td>ABC School</td>
-            <td>2017</td>
-            <td>90%</td>
-        </tr>
-    </table>
-h2>Educational Qualifications</h2>
-
-    <table border="1">
-        <tr>
-            <th>Degree</th>
-            <th>Institution</th>
-            <th>Year of Passing</th>
-            <th>Percentage/CGPA</th>
-        </tr>
-        <tr>
-            <td>Bachelor's in Computer Science</td>
-            <td>XYZ University</td>
-            <td>2023</td>
-            <td>8.5 CGPA</td>
-        </tr>
-        <tr>
-            <td>Higher Secondary (12th)</td>
-            <td>A
+    <div class="container">
+        <h2 class="robot-title robot-text-glow">Educational Qualifications</h2>
+        
+        <table class="qualifications-table robot-interactive">
+            <thead>
+                <tr>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Year of Passing</th>
+                    <th>Percentage/CGPA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bachelor's in Computer Science</td>
+                    <td>XYZ University</td>
+                    <td>2023</td>
+                    <td>8.5 CGPA</td>
+                </tr>
+                <tr>
+                    <td>Higher Secondary (12th)</td>
+                    <td>ABC School</td>
+                    <td>2019</td>
+                    <td>85%</td>
+                </tr>
+                <tr>
+                    <td>Secondary (10th)</td>
+                    <td>ABC School</td>
+                    <td>2017</td>
+                    <td>90%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="../script.js"></script>
 </body>
 </html>
