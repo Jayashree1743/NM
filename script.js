@@ -32,7 +32,7 @@ function initializeHamburgerMenu() {
     const menu = document.querySelector('.menu');
     
     if (!hamburger || !menu) {
-        console.log('🤖 Navigation elements not found - skipping menu initialization');
+        console.log('🤖 Navigation ele');
         return;
     }
 
