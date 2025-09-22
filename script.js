@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeRobotEffects();
     addRobotAnimationStyles();
     
-    console.log('✅ ROBOT NAVIGATION SYSTEM FULLY OPERATIONAL');
+    console.log('✅ ROBOT NAVIGATION ');
 });
 
 /**
@@ -472,3 +472,4 @@ function logRobotStatus(message, type = 'info') {
 
 // Uncomment if using ES6 modules
 // export { robotScrollTo, robotTypeWriter, logRobotStatus };
+
